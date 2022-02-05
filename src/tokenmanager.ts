@@ -33,7 +33,7 @@ export function setTokenMiddleware(app: express.Application, controllers: any[])
             } else {
                 let response: ErrorResponse = {
                     ok: false,
-                    message: "Login incorrecto"
+                    errorMessage: "Login incorrecto"
                 }
                 res.status(401);
                 res.send(response);

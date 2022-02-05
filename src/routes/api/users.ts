@@ -33,7 +33,7 @@ class UsersController implements IController {
             } catch (err) {
                 let response: ErrorResponse = {
                     ok: false,
-                    message: err.message
+                    errorMessage: err.message
                 }
                 res.send(response);
             }
@@ -51,7 +51,7 @@ class UsersController implements IController {
             } catch (err) {
                 let response: ErrorResponse = {
                     ok: false,
-                    message: err.message
+                    errorMessage: err.message
                 }
                 res.send(response);
             }
@@ -69,7 +69,7 @@ class UsersController implements IController {
             } catch (err) {
                 let response: ErrorResponse = {
                     ok: false,
-                    message: err.message
+                    errorMessage: err.message
                 }
                 res.send(response);
             }
@@ -96,7 +96,7 @@ class UsersController implements IController {
             } else {
                 (<ErrorResponse>response) = {
                     ok: false,
-                    message: "Login incorrecto"
+                    errorMessage: "Login incorrecto"
                 }
             }
 
@@ -121,7 +121,7 @@ class UsersController implements IController {
             } catch (err) {
                 let response: ErrorResponse = {
                     ok: false,
-                    message: err.message
+                    errorMessage: err.message
                 }
                 res.send(response);
             }

@@ -1,12 +1,11 @@
 import GenericResponse from "../../model/responses/GenericResponse";
 import ErrorResponse from "../../model/responses/ErrorResponse";
-import {ScheduleGenerationErrorResponse} from "../../model/responses/ScheduleGenerationErrorResponse";
 
 
 class CommonController {
 
     public async createResponse(callbackFunc: Function) {
-        let response: GenericResponse | ErrorResponse | ScheduleGenerationErrorResponse;
+        let response: GenericResponse | ErrorResponse;
         try {
             await callbackFunc();
             response = {
@@ -18,14 +17,13 @@ class CommonController {
                 //ErrorResponse
                 response = {
                     ok: false,
-                    message: err.message,
-                    type: err.type
+                    errorMessage: err.message
                 }
             }else{
                 //GenericScheduleErrorReponse
                 response = {
                     ok: false,
-                    message: err.message
+                    errorMessage: err.message
                 }
             }
         } finally {
